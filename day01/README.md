@@ -22,12 +22,12 @@ Kamu bebas pilih tools seperti:
 ```
 Contoh cara buat VM dengan VirtualBox :
 
-**1. Buka `VirtualBox`**
-**1. Klik `"New"`**
-**2. Pilih OS: `Ubuntu/Linux`**
-**3. Atur RAM `(minimal 1GB) & disk (10GB)`**
-**4. Klik `"Create"`**
-**5. Jalankan `VM` dan install `Ubuntu/Linux`**
+- Buka `VirtualBox`
+- Klik `"New"`
+- Pilih OS: `Ubuntu/Linux`
+- Atur RAM `(minimal 1GB)` & `disk (10GB)`
+- Klik `"Create"`
+- Jalankan `VM` dan install `Ubuntu/Linux`
 
 ## 4. Install Nginx WebServer di VM
 
