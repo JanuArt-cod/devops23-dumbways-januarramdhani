@@ -10,16 +10,17 @@ DevOps adalah implementasi berkolaborasi antara tim development dan operations u
 
 ## 2. Virtual Machine
 
-Saya menggunakan Ubuntu Server pada VirtualBox.
+![Disini saya menggunakan Ubuntu Server pada VirtualBox.](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmKsWKCY_H0bNgedHjXJMoop2-fajr7ZYiw&s)
 
 ## 3. Buat 1 Virtual Machine
 
 Kamu bebas pilih tools seperti:
-```
-VirtualBox
-VMware
-Multipass
-```
+
+1. VirtualBox
+2. VMware
+3. Multipass
+4. etc
+
 Contoh cara buat VM dengan VirtualBox :
 
 - Buka `VirtualBox`
