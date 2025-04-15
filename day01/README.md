@@ -1,6 +1,6 @@
 # Day 1 - Introduction to DevOps
 
-## 1.Istilah DevOps
+## 1. Istilah DevOps
 
 DevOps adalah implementasi berkolaborasi antara tim development dan operations untuk mempercepat proses pengembangan dan pengiriman aplikasi. DevOps adalah :
 
@@ -12,7 +12,7 @@ DevOps adalah implementasi berkolaborasi antara tim development dan operations u
 
 Saya menggunakan Ubuntu Server pada VirtualBox.
 
-## 3.Buat 1 Virtual Machine
+## 3. Buat 1 Virtual Machine
 
 Kamu bebas pilih tools seperti:
 ```
@@ -29,7 +29,7 @@ Contoh cara buat VM dengan VirtualBox :
 **4. Klik `"Create"`**
 **5. Jalankan `VM` dan install `Ubuntu/Linux`**
 
-## 4.Install Nginx WebServer di VM
+## 4. Install Nginx WebServer di VM
 
 Setelah VM jalan dan kamu sudah masuk terminal :
 ```bash
