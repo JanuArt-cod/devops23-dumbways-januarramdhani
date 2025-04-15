@@ -16,9 +16,9 @@ Saya menggunakan Ubuntu Server pada VirtualBox.
 
 Kamu bebas pilih tools seperti:
 ```
-- **VirtualBox**
-- **VMware**
-- **Multipass**
+VirtualBox
+VMware
+Multipass
 ```
 Contoh cara buat VM dengan VirtualBox :
 
