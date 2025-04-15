@@ -10,7 +10,13 @@ DevOps adalah implementasi berkolaborasi antara tim development dan operations u
 
 ## 2. Virtual Machine
 
-![Disini saya menggunakan Ubuntu Server pada VirtualBox.](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmKsWKCY_H0bNgedHjXJMoop2-fajr7ZYiw&s)
+Disini saya menggunakan `VirtualBox.`
+
+![VirtualBox.](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmKsWKCY_H0bNgedHjXJMoop2-fajr7ZYiw&s)
+
+dan Operating system saya `Ubuntu Server.`
+
+![Ubuntu Server.](https://www.osboxes.org/wp-content/uploads/2018/04/ubuntu-server-desktop-post.png)
 
 ## 3. Buat 1 Virtual Machine
 
@@ -43,3 +49,8 @@ Cek apakah nginx berhasil :
 systemctl status nginx
 ```
 Cek dari browser: akses IP `192.168.1.10` untuk melihat halaman default nginx.
+
+
+
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
