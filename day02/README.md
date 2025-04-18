@@ -40,9 +40,8 @@
 4. Subnet 2 menghubungkan Komputer C dan D.
 5. Masing-masing subnet memiliki alamat network, broadcast, dan host IP sesuai pembagian CIDR /30.
 
-## Perbedaan Shell dan Bash
+## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
-### Tabel Komparasi Shell vs Bash
 
 | Aspek             | SH (Shell)                                                                 |BASH (Bourne-Again Shell)                                                                                            |
 |-------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
