@@ -40,8 +40,11 @@
 4. Subnet 2 menghubungkan Komputer C dan D.
 5. Masing-masing subnet memiliki alamat network, broadcast, dan host IP sesuai pembagian CIDR /30.
 
-## Keunggulan Topologi Ini
-- Efisien IP Address: CIDR /30 hanya menyediakan 2 host per subnet, cocok untuk jaringan kecil.
-- Isolasi jaringan: Subnet A dan B dapat dipisahkan untuk keamanan atau manajemen.
-- Pengelolaan mudah: Router sebagai pusat kendali membuat troubleshooting dan pemantauan lebih praktis.
+## Perbedaan Shell dan Bash
 
+|---------------|------------------------------------------------|---------------------------------------------|
+| Aspek         | SH (Shell)                                     | BASH (Bourne-Again Shell)                   |
+|---------------|------------------------------------------------|---------------------------------------------|
+| Definisi      | Antarmuka baris perintah umum buat komunikasi  | Bourne Again Shell, pengembangan dari Bourne
+                                                                   Shell (sh) dengan fitur lebih kaya.
+                  dengan sistem operasi.
