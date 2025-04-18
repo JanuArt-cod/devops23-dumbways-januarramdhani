@@ -40,7 +40,7 @@
 4. Subnet 2 menghubungkan Komputer C dan D.
 5. Masing-masing subnet memiliki alamat network, broadcast, dan host IP sesuai pembagian CIDR /30.
 
-## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
+# Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
 
 | Aspek             | SH (Shell)                                                                 |BASH (Bourne-Again Shell)                                                                                            |
@@ -57,3 +57,95 @@
 | **Lisensi**        | Bervariasi tergantung jenis shell.                                    | GNU GPL (open source).                                                                          |
 | **Pengembang**     | Dikembangkan oleh berbagai pihak, tergantung jenis shell.             | Brian Fox (GNU Project), saat ini dikembangkan oleh komunitas GNU.                              |
 
+
+# Dokumentasi Dasar Command Linux
+
+### 🔹 Navigasi Direktori
+
+| Perintah         | Fungsi                                                                 |
+|------------------|------------------------------------------------------------------------|
+| `pwd`            | Menampilkan direktori aktif saat ini.                                 |
+| `ls`             | Melihat daftar file dan folder.                                        |
+| `cd [folder]`    | Masuk ke direktori tertentu.                                           |
+| `cd ..`          | Kembali ke direktori induk.                                            |
+| `cd ~` atau `cd` | Masuk ke direktori home user.                                          |
+
+---
+
+### 🔹 Manajemen File & Direktori
+
+| Perintah                 | Fungsi                                                           |
+|--------------------------|------------------------------------------------------------------|
+| `touch file.txt`         | Membuat file kosong baru.                                       |
+| `mkdir nama_folder`      | Membuat direktori/folder baru.                                  |
+| `cp sumber.txt tujuan/`  | Menyalin file ke folder lain.                                   |
+| `mv file.txt folder/`    | Memindahkan file ke folder atau mengganti nama file.            |
+| `rm file.txt`            | Menghapus file.                                                 |
+| `rm -r folder/`          | Menghapus folder beserta isinya.                                |
+
+---
+
+### 🔹 Informasi Sistem
+
+| Perintah      | Fungsi                                                               |
+|---------------|----------------------------------------------------------------------|
+| `uname -a`    | Menampilkan informasi sistem lengkap.                               |
+| `top`         | Melihat proses yang berjalan secara real-time.                      |
+| `htop`        | Tampilan proses interaktif (perlu instalasi terlebih dulu).         |
+| `df -h`       | Melihat penggunaan ruang disk.                                      |
+| `free -h`     | Menampilkan penggunaan RAM.                                         |
+
+---
+
+### 🔹 Manajemen Pengguna
+
+| Perintah                   | Fungsi                                                        |
+|----------------------------|---------------------------------------------------------------|
+| `whoami`                   | Menampilkan nama user saat ini.                               |
+| `adduser nama_user`        | Menambahkan user baru.                                        |
+| `passwd nama_user`         | Mengatur password untuk user.                                 |
+| `deluser nama_user`        | Menghapus user.                                               |
+| `su nama_user`             | Masuk sebagai user lain.                                      |
+
+---
+
+### 🔹 Hak Akses & Permission
+
+| Perintah                       | Fungsi                                                       |
+|--------------------------------|--------------------------------------------------------------|
+| `chmod +x file.sh`             | Memberi hak akses eksekusi pada file.                        |
+| `chown user:group file.txt`    | Mengubah kepemilikan file.                                  |
+| `ls -l`                        | Menampilkan file/folder beserta hak aksesnya.                |
+
+---
+
+### 🔹 Jaringan
+
+| Perintah            | Fungsi                                                           |
+|---------------------|------------------------------------------------------------------|
+| `ping google.com`   | Mengecek koneksi ke server.                                     |
+| `ifconfig` / `ip a` | Menampilkan informasi jaringan.                                 |
+| `netstat -tulpn`    | Melihat port yang digunakan aplikasi.                           |
+| `curl url`          | Mengambil data dari internet (API/website).                     |
+
+---
+
+### 🔹 Manajemen Paket (Debian/Ubuntu)
+
+| Perintah                       | Fungsi                                                   |
+|--------------------------------|----------------------------------------------------------|
+| `sudo apt update`              | Memperbarui daftar paket.                               |
+| `sudo apt upgrade`             | Menginstal pembaruan paket.                             |
+| `sudo apt install nama_paket`  | Menginstal aplikasi/paket baru.                         |
+| `sudo apt remove nama_paket`   | Menghapus aplikasi/paket.                               |
+
+---
+
+### 🔹 Perintah Umum Lainnya
+
+| Perintah              | Fungsi                                                         |
+|-----------------------|----------------------------------------------------------------|
+| `man ls`              | Melihat manual dari perintah `ls`.                             |
+| `history`             | Melihat daftar perintah yang pernah digunakan.                 |
+| `clear`               | Membersihkan layar terminal.                                   |
+| `alias ll='ls -la'`   | Membuat alias untuk perintah panjang.                          |
