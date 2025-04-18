@@ -44,7 +44,7 @@
 
 ### Tabel Komparasi Shell vs Bash
 
-| Aspek             | Shell                                                                 | Bash                                                                                             |
+| Aspek             | SH (Shell)                                                                 |BASH (Bourne-Again Shell)                                                                                            |
 |-------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | **Definisi**       | Shell adalah antarmuka command-line yang digunakan untuk berinteraksi dengan sistem operasi. | Bash (Bourne Again Shell) adalah shell yang dikembangkan sebagai penerus Bourne Shell (sh) dengan fitur tambahan. |
 | **Jenis**          | Umum dan mencakup berbagai jenis seperti sh, csh, ksh, zsh.            | Salah satu jenis shell yang spesifik dan paling umum digunakan di Linux dan macOS.              |
