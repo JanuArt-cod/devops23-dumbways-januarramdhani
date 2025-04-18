@@ -58,94 +58,78 @@
 | **Pengembang**     | Dikembangkan oleh berbagai pihak, tergantung jenis shell.             | Brian Fox (GNU Project), saat ini dikembangkan oleh komunitas GNU.                              |
 
 
-# Dokumentasi Dasar Command Linux
+# Dokumentasi Dasar Command Linux (dengan Contoh Output)
 
 ### 🔹 Navigasi Direktori
 
-| Perintah         | Fungsi                                                                 |
-|------------------|------------------------------------------------------------------------|
-| `pwd`            | Menampilkan direktori aktif saat ini.                                 |
-| `ls`             | Melihat daftar file dan folder.                                        |
-| `cd [folder]`    | Masuk ke direktori tertentu.                                           |
-| `cd ..`          | Kembali ke direktori induk.                                            |
-| `cd ~` atau `cd` | Masuk ke direktori home user.                                          |
+| Perintah       | Fungsi                          | Contoh Output                       |
+|----------------|----------------------------------|-------------------------------------|
+| `pwd`          | Menampilkan direktori aktif     | `/home/user`                        |
+| `ls`           | Menampilkan isi direktori       | `file1.txt  folder1  script.sh`     |
+| `cd ..`        | Kembali ke direktori induk      | (tidak ada output, hanya berpindah) |
+| `cd ~`         | Masuk ke direktori home         | (tidak ada output)                  |
 
 ---
 
-### 🔹 Manajemen File & Direktori
+### 🔹 Manajemen File & Folder
 
-| Perintah                 | Fungsi                                                           |
-|--------------------------|------------------------------------------------------------------|
-| `touch file.txt`         | Membuat file kosong baru.                                       |
-| `mkdir nama_folder`      | Membuat direktori/folder baru.                                  |
-| `cp sumber.txt tujuan/`  | Menyalin file ke folder lain.                                   |
-| `mv file.txt folder/`    | Memindahkan file ke folder atau mengganti nama file.            |
-| `rm file.txt`            | Menghapus file.                                                 |
-| `rm -r folder/`          | Menghapus folder beserta isinya.                                |
+| Perintah             | Fungsi                            | Contoh Output                       |
+|----------------------|------------------------------------|-------------------------------------|
+| `touch test.txt`     | Membuat file kosong                | (tidak ada output)                  |
+| `mkdir data`         | Membuat folder baru                | (tidak ada output)                  |
+| `cp a.txt data/`     | Menyalin file ke folder            | (tidak ada output)                  |
+| `mv test.txt old/`   | Memindahkan file                   | (tidak ada output)                  |
+| `rm file.txt`        | Menghapus file                     | (tidak ada output)                  |
+| `rm -r folder/`      | Menghapus folder dan isinya        | (tidak ada output)                  |
 
 ---
 
 ### 🔹 Informasi Sistem
 
-| Perintah      | Fungsi                                                               |
-|---------------|----------------------------------------------------------------------|
-| `uname -a`    | Menampilkan informasi sistem lengkap.                               |
-| `top`         | Melihat proses yang berjalan secara real-time.                      |
-| `htop`        | Tampilan proses interaktif (perlu instalasi terlebih dulu).         |
-| `df -h`       | Melihat penggunaan ruang disk.                                      |
-| `free -h`     | Menampilkan penggunaan RAM.                                         |
+| Perintah      | Fungsi                                | Contoh Output (Singkat)                                       |
+|---------------|----------------------------------------|---------------------------------------------------------------|
+| `uname -a`    | Info kernel dan arsitektur OS         | `Linux ubuntu 5.15.0-84-generic x86_64 GNU/Linux`             |
+| `top`         | Monitoring proses                      | Daftar proses secara real-time (berjalan di terminal)         |
+| `df -h`       | Penggunaan disk                        | `/dev/sda1   50G  25G  25G  50% /`                            |
+| `free -h`     | Penggunaan RAM                         | `Mem: 7.6Gi total, 1.5Gi used, 5.5Gi free`                    |
 
 ---
 
-### 🔹 Manajemen Pengguna
+### 🔹 Pengguna & Hak Akses
 
-| Perintah                   | Fungsi                                                        |
-|----------------------------|---------------------------------------------------------------|
-| `whoami`                   | Menampilkan nama user saat ini.                               |
-| `adduser nama_user`        | Menambahkan user baru.                                        |
-| `passwd nama_user`         | Mengatur password untuk user.                                 |
-| `deluser nama_user`        | Menghapus user.                                               |
-| `su nama_user`             | Masuk sebagai user lain.                                      |
-
----
-
-### 🔹 Hak Akses & Permission
-
-| Perintah                       | Fungsi                                                       |
-|--------------------------------|--------------------------------------------------------------|
-| `chmod +x file.sh`             | Memberi hak akses eksekusi pada file.                        |
-| `chown user:group file.txt`    | Mengubah kepemilikan file.                                  |
-| `ls -l`                        | Menampilkan file/folder beserta hak aksesnya.                |
+| Perintah                   | Fungsi                          | Contoh Output                        |
+|----------------------------|----------------------------------|--------------------------------------|
+| `whoami`                   | Menampilkan user aktif          | `user`                               |
+| `chmod +x script.sh`       | Memberi hak eksekusi            | (tidak ada output)                   |
+| `ls -l`                    | Menampilkan file + permission   | `-rw-r--r-- 1 user user 1234 Apr 18 file.txt` |
 
 ---
 
 ### 🔹 Jaringan
 
-| Perintah            | Fungsi                                                           |
-|---------------------|------------------------------------------------------------------|
-| `ping google.com`   | Mengecek koneksi ke server.                                     |
-| `ifconfig` / `ip a` | Menampilkan informasi jaringan.                                 |
-| `netstat -tulpn`    | Melihat port yang digunakan aplikasi.                           |
-| `curl url`          | Mengambil data dari internet (API/website).                     |
+| Perintah             | Fungsi                               | Contoh Output                                 |
+|----------------------|---------------------------------------|-----------------------------------------------|
+| `ping google.com`    | Cek koneksi internet                 | `64 bytes from google.com: icmp_seq=1 ttl=56` |
+| `ip a`               | Info alamat IP dan interface        | `inet 192.168.1.10/24`                        |
+| `curl example.com`   | Ambil data dari URL                 | `<html> ... </html>`                         |
 
 ---
 
-### 🔹 Manajemen Paket (Debian/Ubuntu)
+### 🔹 Manajemen Paket
 
-| Perintah                       | Fungsi                                                   |
-|--------------------------------|----------------------------------------------------------|
-| `sudo apt update`              | Memperbarui daftar paket.                               |
-| `sudo apt upgrade`             | Menginstal pembaruan paket.                             |
-| `sudo apt install nama_paket`  | Menginstal aplikasi/paket baru.                         |
-| `sudo apt remove nama_paket`   | Menghapus aplikasi/paket.                               |
+| Perintah                      | Fungsi                          | Contoh Output                              |
+|-------------------------------|----------------------------------|--------------------------------------------|
+| `sudo apt update`             | Update list paket                | `Hit:1 http://archive.ubuntu.com ...`       |
+| `sudo apt install git`        | Install paket                    | `Setting up git (1:2.34.1) ...`             |
+| `sudo apt remove nano`        | Hapus paket                      | `Removing nano (5.4-2ubuntu2) ...`          |
 
 ---
 
-### 🔹 Perintah Umum Lainnya
+### 🔹 Perintah Lain yang Berguna
 
-| Perintah              | Fungsi                                                         |
-|-----------------------|----------------------------------------------------------------|
-| `man ls`              | Melihat manual dari perintah `ls`.                             |
-| `history`             | Melihat daftar perintah yang pernah digunakan.                 |
-| `clear`               | Membersihkan layar terminal.                                   |
-| `alias ll='ls -la'`   | Membuat alias untuk perintah panjang.                          |
+| Perintah              | Fungsi                             | Contoh Output                      |
+|-----------------------|-------------------------------------|------------------------------------|
+| `history`             | Melihat riwayat command             | `1  ls` `2  cd folder/`            |
+| `clear`               | Bersihkan terminal                  | (terminal menjadi bersih)          |
+| `alias ll='ls -la'`   | Alias perintah                      | (tidak ada output, langsung aktif) |
+"""
