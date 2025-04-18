@@ -58,7 +58,7 @@
 | **Pengembang**     | Dikembangkan oleh berbagai pihak, tergantung jenis shell.             | Brian Fox (GNU Project), saat ini dikembangkan oleh komunitas GNU.                              |
 
 
-# Dokumentasi Dasar Command Linux (dengan Contoh Output)
+# Dokumentasi Dasar Command Linux (dengan Contoh Outputnya)
 
 ### 🔹 Navigasi Direktori
 
