@@ -133,3 +133,144 @@
 | `clear`               | Bersihkan terminal                  | (terminal menjadi bersih)          |
 | `alias ll='ls -la'`   | Alias perintah                      | (tidak ada output, langsung aktif) |
 """
+
+# Implementasi Perintah Linux
+
+1. Menuliskan perintah untuk update software linux
+```bash
+sudo apt update
+```
+![1](https://github.com/user-attachments/assets/4dc1c6af-87c3-4810-a1a5-3100222ed784)
+
+2. Menuliskan perintah untuk membuat direktori dumbways dan perintah list (ls) untuk menampilkan folder yang sudah dibuat
+```bash
+mkdir dumbways
+```
+```bash
+ls
+```
+![2](https://github.com/user-attachments/assets/a77801eb-9e18-4c1d-acbb-e2a9d411ed2a)
+
+3. Menuliskan perintah untuk membuat file filesatu dan perintah list (ls) untuk menampilkan file yang sudah dibuat
+```bash
+touch filesatu
+```
+![3](https://github.com/user-attachments/assets/02bb9a00-9ac0-4eae-b475-7e5704e4651a)
+
+4. Menuliskan perintah untuk menampilkan list dengan li dan la untuk menampilkan semua file termasuk yang hidden, dimana l adalah long format(detailed metadata) sedangkan a adalah all files
+```bash
+ls -la
+```
+![4](https://github.com/user-attachments/assets/036982b5-03ea-41ce-82c7-ba0d7bba2bac)
+
+5. Menuliskan perintah untuk masuk ke direktori dumbways dan perintah untuk keluar dari direktori dumbways
+```bash
+cd dumbways
+```
+```bash
+cd ..
+```
+![5](https://github.com/user-attachments/assets/8f8a5131-9fc5-473c-a4f9-b2728e5416fb)
+
+6. Menuliskan perintah untuk copy file atau duplikat file, dimana filesatu adalah file yang akan di duplikat sedangkan sebelahnya adalah calon file duplikat dengan nama filedua
+```bash
+cp filesatu filedua
+```
+![6](https://github.com/user-attachments/assets/550a0117-3c94-4867-83b8-b3519bcc67b2)
+
+7. Menuliskan perintah untuk move file atau memindahkan file, dimana filesatu dipindah ke dalam folder dumbways
+```bash
+mv filesatu dumbways/filesatu
+```
+![7](https://github.com/user-attachments/assets/88c178ad-aa44-4af4-8cbf-85ecaaf32634)
+
+8. Menuliskan perintah untuk membuat text hello dumbways
+```bash
+echo 'hello dumbways'
+```
+![8](https://github.com/user-attachments/assets/683ffcfe-b092-4e5c-b1b0-b6b637655e5c)
+
+9. Menuliskan perintah untuk membuat text hello dumbways di dalam file.js
+```bash
+echo 'hello dumbways' > file.js
+```
+![9](https://github.com/user-attachments/assets/98a4ed04-65ed-45d5-9e7d-5d2daf61063d)
+
+10. Menuliskan perintah untuk menampilkan text atau konten di dalam file.js
+```bash
+cat file.js
+```
+![10](https://github.com/user-attachments/assets/88202ad8-dcd4-4e33-99f5-47bf1d763a1a)
+
+11. Menuliskan perintah untuk menampilkan text 2x dengan menambah simbol >>
+```bash
+echo 'hello dumbways' >> file.js
+```
+![11](https://github.com/user-attachments/assets/4d3a39b4-6662-4714-98eb-2529c736e9b9)
+
+12. Menuliskan perintah find untuk mencari file atau folder, dengan catatan ini umum maka akan menampilkan semua file dan folder
+```bash
+find
+```
+_perintah find dapat dibuat spesifik mencari folder atau file dengan prompt seperti ini_
+```bash
+find -type f
+find -type d
+find -type f -name filesatu
+```
+![12](https://github.com/user-attachments/assets/f913fdb0-8aa1-44ee-884a-514a4025cdb8)
+
+13. Perintah grep untuk mencari text atau input didalam file tertentu
+```bash
+grep hello file.js
+grep -r hello
+```
+![13](https://github.com/user-attachments/assets/912c5e72-8700-45f2-80d4-7508e066cab1)
+
+14. Perintah untuk membuat text editor di dalam file.js
+```bash
+nano file.js
+```
+![14](https://github.com/user-attachments/assets/42a407f7-ff64-40cd-8b0c-86f300fd482f)
+
+15.  Perintah untuk mengubah permission file atau direktori
+```bash
+chmod 777 file.js
+chmod 773 file.js
+```
+![15](https://github.com/user-attachments/assets/46d5417a-edae-4f84-aa0a-b9a1b85d3429)
+
+16. Perintah untuk mengubah kepemilikan file atau direktori
+```bash
+sudo chown root:root file.js
+```
+![16](https://github.com/user-attachments/assets/99193849-f92b-46a7-99b9-7495e34a24c8)
+
+17. Perintah untuk menampilkan riwayat semua perintah linux yang pernah dijalankan
+```bash
+history
+```
+![17](https://github.com/user-attachments/assets/642b4c25-cf55-4e2d-9c4b-1b0b14464e42)
+
+18. Perintah untuk memperbaiki masalah jaringan
+```bash
+sudo netplan apply
+```
+![18](https://github.com/user-attachments/assets/a7271875-a3ec-4d88-98e5-0715c5b2fa36)
+
+19. Perintah untuk memperbaiki izin file konfigurasi Netplan
+```bash
+sudo chmod 600 /etc/netplan/01-netcfg.yaml
+```
+
+20. Perintah untuk mengecek apakah interface jaringan (seperti enp0s3) sudah dapat IP address.
+```bash
+ip a
+```
+![19](https://github.com/user-attachments/assets/03f5ddf7-e04d-4077-aa24-20a5f9edcccf)
+
+21. Perintah untuk cek file konfigurasi netplan.
+```bash
+ls /etc/netplan/
+```
+![20](https://github.com/user-attachments/assets/bb4b7e48-0338-4251-a0cb-1a281f15d025)
