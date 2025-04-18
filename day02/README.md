@@ -42,9 +42,19 @@
 
 ## Perbedaan Shell dan Bash
 
-|---------------|------------------------------------------------|---------------------------------------------|
-| Aspek         | SH (Shell)                                     | BASH (Bourne-Again Shell)                   |
-|---------------|------------------------------------------------|---------------------------------------------|
-| Definisi      | Antarmuka baris perintah umum buat komunikasi  | Bourne Again Shell, pengembangan dari Bourne
-                                                                   Shell (sh) dengan fitur lebih kaya.
-                  dengan sistem operasi.
+### Tabel Komparasi Shell vs Bash
+
+| Aspek             | Shell                                                                 | Bash                                                                                             |
+|-------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Definisi**       | Shell adalah antarmuka command-line yang digunakan untuk berinteraksi dengan sistem operasi. | Bash (Bourne Again Shell) adalah shell yang dikembangkan sebagai penerus Bourne Shell (sh) dengan fitur tambahan. |
+| **Jenis**          | Umum dan mencakup berbagai jenis seperti sh, csh, ksh, zsh.            | Salah satu jenis shell yang spesifik dan paling umum digunakan di Linux dan macOS.              |
+| **Fitur Dasar**    | Umumnya hanya mendukung perintah dasar dan skrip sederhana.           | Mendukung fitur lanjutan seperti command history, auto-completion, dan scripting kompleks.     |
+| **Scripting**      | Bisa digunakan untuk scripting dasar.                                 | Mendukung scripting lanjutan: fungsi, array, ekspansi parameter, dan kontrol alur.              |
+| **Interaktivitas** | Kurang interaktif, minim fitur tambahan.                              | Lebih interaktif dengan dukungan autocomplete, prompt kustom, dan fitur navigasi riwayat.       |
+| **File Konfigurasi**| Menggunakan file konfigurasi berbeda-beda tergantung jenis shell.     | Menggunakan `.bashrc`, `.bash_profile`, atau `.profile` untuk konfigurasi.                      |
+| **Kecepatan**      | Umumnya lebih ringan karena minim fitur.                              | Sedikit lebih lambat karena fitur yang lebih banyak.                                            |
+| **Ketersediaan**   | Tersedia di hampir semua sistem Unix/Linux.                           | Umumnya sudah menjadi default di banyak distribusi Linux dan tersedia di macOS.                |
+| **Contoh Perintah**| `sh`, `csh`, `ksh`, `zsh`.                                             | `bash`, atau langsung digunakan jika menjadi default shell.                                     |
+| **Lisensi**        | Bervariasi tergantung jenis shell.                                    | GNU GPL (open source).                                                                          |
+| **Pengembang**     | Dikembangkan oleh berbagai pihak, tergantung jenis shell.             | Brian Fox (GNU Project), saat ini dikembangkan oleh komunitas GNU.                              |
+
