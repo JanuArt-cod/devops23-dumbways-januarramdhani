@@ -181,3 +181,31 @@ Cocok untuk mencari data dari input pengguna atau log yang tidak konsisten penul
 ![23](https://github.com/user-attachments/assets/75a57650-2c48-41cd-b833-957a41e75417)
 
 > Dengan opsi -n, grep akan menampilkan baris-baris yang mengandung kata Guys
+
+## 6. Perintah `sed`
+> sed adalah singkatan dari Stream Editor, yaitu tool yang digunakan untuk memproses dan mengubah isi teks melalui command line. Keunggulannya adalah kamu bisa mengedit teks langsung dari terminal, bahkan untuk proses otomatis atau script. Cocok banget buat kamu yang ingin mengubah banyak file sekaligus tanpa perlu membuka satu per satu.
+```
+sed --help
+```
+
+![25](https://github.com/user-attachments/assets/9008f537-0e0c-4e8f-85bd-4e8b89ab2973)
+
+> Maka akan muncul daftar opsi dan penjelasan penggunaannya langsung dari terminal. Tapi, biar lebih jelas, berikut ini rangkuman dan penjelasan versi mudah dipahami dari output sed --help.
+
+## 7. Mengaktifkan Firewall dan Memberi Akses Port
+> Terakhir, kita aktifkan UFW (Uncomplicated Firewall) untuk menjaga server tetap aman, dan hanya buka port-port tertentu yang dibutuhkan aplikasi kita.
+
+```bash
+  sudo ufw allow 22
+  sudo ufw allow 80
+  sudo ufw allow 443
+  sudo ufw allow 3000
+  sudo ufw allow 5000
+  sudo ufw allow 6969
+```
+> Cek status :
+```bash
+  sudo ufw status
+```
+![7](https://github.com/user-attachments/assets/3dd12e8d-94db-4d83-88c3-601c941ef6cc)
+
