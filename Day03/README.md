@@ -113,3 +113,71 @@ Jalankan perintah ssh-keygen di terminal komputer client (Windows). Saat diminta
 > Dengan perintah ini, isi dari dua file ( file1 dan file2 akan digabungkan jadi satu, dan hasilnya disimpan di file baru bernama file3. Ini sangat berguna kalau kamu punya beberapa file teks terpisah dan ingin menjadikannya satu file gabungan.
 
 ![15](https://github.com/user-attachments/assets/3eb841bf-e13f-45e5-a6cf-9be4e389caac)
+
+## 4. Perintah `echo`
+**A. Menampilkan teks ke terminal**
+```bash
+  echo "Alhamdulillah"
+```
+> Perintah ini digunakan untuk mencetak teks ke layar terminal. Dalam contoh ini, terminal akan menampilkan kata Alhamdulillah. Cocok dipakai untuk debugging, memberi output cepat, atau sekadar menguji sintaks.
+
+![16](https://github.com/user-attachments/assets/62e7af78-d589-4b4d-8300-5114bc7a9472)
+
+**B. Menambahkan teks ke akhir baris file**
+```bash
+  echo "Luar Biasa" >> file1
+```
+> Berbeda dari sebelumnya, perintah ini tidak menimpa, tapi menambahkan teks Luar Biasa di akhir file1. Ini aman digunakan kalau kamu ingin menambahkan log atau catatan tambahan tanpa menghapus isi yang sudah ada.
+
+![17](https://github.com/user-attachments/assets/e5da28e7-a561-4426-a219-4c26d3e08e47)
+
+**C. Membuat file baru langsung dengan isi**
+```bash
+  echo "DevOps" > file4
+```
+
+![18](https://github.com/user-attachments/assets/6c8f7b4f-b923-4868-8e7d-c034df3507c8)
+
+> Dengan perintah ini, file baru bernama file4 akan dibuat (jika belum ada) dan langsung diisi dengan teks DevOps. Praktis untuk membuat file konfigurasi, catatan, atau pengujian cepat.
+
+## 5. Perintah `grep`
+**A. Mencari teks tertentu dalam file**
+```bash
+  grep Guys file1
+```
+> grep digunakan untuk mencari baris yang mengandung kata Guys dalam file1. Ini sangat berguna saat kamu ingin mencari baris yang relevan tanpa membaca semua isi file secara manual.
+
+**B. Case-insensitive search**
+```bash
+  grep -i "hello" berkastujuh.txt
+```
+![26](https://github.com/user-attachments/assets/ff18f6b4-5ed4-4e6b-a772-b53cc6ffc955)
+
+> Opsi -i membuat pencarian menjadi tidak sensitif terhadap huruf besar/kecil. Jadi alhamdulillah dan AAlhamDulillAh, akan tetap dianggap cocok.
+Cocok untuk mencari data dari input pengguna atau log yang tidak konsisten penulisannya.
+
+**C. Menghitung jumlah baris yang cocok**
+```bash
+  grep -c Alhamdulillah file1
+  grep -c Guys file2
+  grep -c Guys file3
+```
+![21](https://github.com/user-attachments/assets/3575714c-7ea5-4a1b-9246-ad65e470c372)
+
+> Opsi -c akan menghitung berapa kali pola atau kata yang dicari muncul dalam file. Hasilnya adalah angka, bukan isi baris.
+
+**D. Mencari di banyak file sekaligus**
+```bash
+  grep -c Guys *
+```
+![22](https://github.com/user-attachments/assets/f79d2c60-ec4c-4936-b48e-50204b7cd7f1)
+
+> Di sini, kita mencari kata Guys di semua file yang ada di direktori saat ini. Hasilnya akan menunjukkan jumlah kecocokan dari masing-masing file.
+
+**E. Menampilkan baris yang cocok dengan nomor baris**
+```bash
+  grep -n Guys file2
+```
+![23](https://github.com/user-attachments/assets/75a57650-2c48-41cd-b833-957a41e75417)
+
+> Dengan opsi -n, grep akan menampilkan baris-baris yang mengandung kata Guys
