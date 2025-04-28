@@ -164,18 +164,31 @@ git commit -m "First commit"
 
 ### 6. Hubungkan dan Push ke GitHub
 
+![23](https://github.com/user-attachments/assets/002c366c-db89-4073-84dc-62afe93ac00e)
+
+![25](https://github.com/user-attachments/assets/2f5fda73-4750-4cd1-bda5-3e196ae65077)
+
 - Tambahkan remote origin:
 ```bash
-git remote add origin git@github.com:januart-cod/dumbways-batch-23.git
+git remote add origin git@github.com:JanuArt-cod/devops23-dumbways-januarramdhani.git
 ```
+![24](https://github.com/user-attachments/assets/3f521ef9-dc44-462b-a382-9d3b14844e22)
+
 - Ganti branch jika perlu:
 ```bash
 git branch -M main
 ```
+
+![26](https://github.com/user-attachments/assets/cb04d062-cca0-42f7-b9dc-7200f60ccbd9)
+
 - Push perubahan:
 ```bash
 git push -u origin main
 ```
+
+![28](https://github.com/user-attachments/assets/f3ebc554-c2dc-4fa4-a88d-676b04a5d421)
+
+![29](https://github.com/user-attachments/assets/bf2cd4ac-15ec-41e6-9dfb-6487b4bb16a0)
 
 ---
 
@@ -187,20 +200,45 @@ Setelah repository berjalan, berikut cara rutin mengelola perubahan:
 ```bash
 git status
 ```
+
+![31](https://github.com/user-attachments/assets/d9e0a85d-8896-4398-8129-5a214783c38e)
+
+2. Tambahkan perubahan:
+```bash
+mkdir day04
+touch day04/README.md
+ls
+git status
+```
+
+![32](https://github.com/user-attachments/assets/b901268d-3035-4269-a765-43bb4c661fdf)
+
 2. Tambahkan perubahan:
 ```bash
 git add .
+git status
 ```
+
+![33](https://github.com/user-attachments/assets/b01c523b-b69b-4643-a109-86eba6e3d34b)
+
 3. Commit perubahan:
 ```bash
-git commit -m "deskripsi perubahan"
+git commit -m "Menambahkan folder day4 untuk task dumbways"
 ```
+
+![34](https://github.com/user-attachments/assets/410ed720-d675-42f9-90f7-bb50036046f3)
+
+
 4. Push ke GitHub:
 ```bash
 git push -u origin main
 ```
 
+![36](https://github.com/user-attachments/assets/69071731-850c-4f5c-a13e-995b685e14bc)
+
 ---
+
+![38](https://github.com/user-attachments/assets/c8c1fade-7765-4e91-ba0b-ad30870fb16f)
 
 # 💚 Kesimpulan
 
@@ -211,13 +249,3 @@ Git dan GitHub adalah pondasi penting dalam pengembangan perangkat lunak modern.
 - Workflow commit dan push,
 
 kita dapat membangun proyek yang terstruktur, kolaboratif, dan profesional.
-
-> **Tips Tambahan:**
-> - Buat commit kecil dan sering.
-> - Selalu pakai branch untuk fitur baru.
-> - Lakukan pull request untuk review perubahan sebelum merge.
-
----
-
-**Selamat berlatih dan membangun proyek luar biasa dengan Git dan GitHub!** 🚀
-
