@@ -136,3 +136,79 @@ Setelah disimpan, Anda dapat mengakses server seperti biasa dengan :
 > Jika login berhasil, artinya port sudah berhasil diganti dan dikonfigurasi dengan benar.
 
 ![10](https://github.com/user-attachments/assets/84cd7fa7-6f4c-440f-b02f-d3774f1bae23)
+
+## 3. 🛡️ Membatasi Akses SSH ke Satu Device dengan Public Key
+> Dalam praktik DevOps dan keamanan sistem, idealnya akses ke server dilakukan hanya oleh perangkat yang secara eksplisit diizinkan. Hal ini bisa dicapai dengan membatasi akses SSH hanya berdasarkan pasangan Public Key - Private Key tertentu yang terdaftar di server.
+
+> SSH menggunakan dua metode autentikasi utama :
+> - Password Authentication: Kurang aman, rawan brute-force
+> - Public Key Authentication: Lebih aman, karena login hanya bisa dilakukan jika server mengenali public key dari client
+
+### 🔧 Langkah-langkah :
+
+#### 3.1 Pastikan Autentikasi Public Key Aktif
+
+Untuk mengecek apakah server hanya mengizinkan login via Public Key dan menolak password, jalankan :
+```
+  grep PubkeyAuthentication /etc/ssh/sshd_config && grep PasswordAuthentication /etc/ssh/sshd_config
+```
+
+Hasil yang diinginkan :
+```
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+```
+
+![12](https://github.com/user-attachments/assets/17f07335-1353-4d34-888d-3e78b6671b2f)
+
+> Jika hasilnya belum seperti di atas, ubah file /etc/ssh/sshd_config dan pastikan baris tersebut sesuai.
+
+#### 3.2 Batasi Isi File `authorized_keys`
+
+File `authorized_keys` di server berisi daftar public key yang diizinkan login. Untuk membatasi hanya satu perangkat saja :
+
+  1. Akses direktori `.ssh` di dalam home directory user yang digunakan (misalnya `januar`):
+     ```
+     cd ssh
+     ```
+  2. Buka file `authorized_keys` :
+     ```
+     nano authorized_keys
+     ```
+> Anda akan melihat satu atau lebih baris public key. Jika ada beberapa key :
+> - Biarkan hanya satu baris aktif (tanpa tanda `#`)
+> - Tambahkan `#` di depan baris lainnya untuk menonaktifkannya
+
+Contoh:
+```
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user1@laptop
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD... user2@VM
+```
+> Hanya perangkat dengan private key yang sesuai dengan baris pertama yang dapat login.
+
+![13](https://github.com/user-attachments/assets/a533f142-285c-4dbb-8e55-372bb5a65e2b)
+
+#### 3.3 Uji dari Dua Perangkat
+> Karena hanya tersedia satu perangkat fisik dan satu pasangan public–private key, pengujian dilakukan menggunakan dua terminal berbeda di Windows, yaitu :
+> - PowerShell → digunakan untuk mengakses server dengan konfigurasi private key yang valid.
+> - Git Bash → digunakan untuk mencoba masuk ke server menggunakan private key lain (yang tidak terdaftar atau dikomentari di server).
+
+**- Uji Akses dari PowerShell (Berhasil)**
+
+ Jalankan perintah berikut :
+ 
+```
+  ssh vm-dumbways
+```
+> ✅ Hasil: Koneksi berhasil karena private key yang digunakan cocok dengan public key yang disimpan di server.
+
+**- Uji Akses dari Git Bash (Gagal)**
+
+  Buka terminal Git Bash, lalu jalankan perintah yang sama :
+
+```
+  ssh vm-dumbways
+```
+> Hasil: Koneksi ditolak karena key yang digunakan tidak dikenali (public key-nya sudah dikomentari di server).
+
+![14](https://github.com/user-attachments/assets/d8e3e6f6-1b2b-4f36-a1dd-11e1ecb04592)
