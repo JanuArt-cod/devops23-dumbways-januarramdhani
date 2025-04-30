@@ -54,4 +54,72 @@
 
 ![6](https://github.com/user-attachments/assets/36aeb1fc-c846-4d7b-b2cf-ef6fd1470547)
 
+---
 
+# 🔄 Demonstrasi Proses Pull Request Sebagai Kontributor
+> Bagian ini menjelaskan langkah demi langkah bagaimana seseorang dapat berkontribusi terhadap repositori GitHub melalui proses pull request, seperti yang dilakukan oleh seorang kontributor eksternal terhadap repositori `dumbways-devops-23`. Simulasi ini menggambarkan alur kolaborasi dalam proyek menggunakan Git dan GitHub, mulai dari cloning repositori, membuat branch baru, melakukan perubahan, hingga membuat dan menyelesaikan pull request.
+
+## A. Menyiapkan Lingkungan Lokal
+### 1. Clone Repositori Sebagai Kontributor
+> Pertama, seorang kontributor harus melakukan clone repositori dari GitHub ke dalam direktori lokal di komputernya. Misalnya dengan nama folder kontributor.
+```
+  git clone git@github.com:JanuArt-cod/dumbways-devops-23.git kontributor
+```
+
+![8](https://github.com/user-attachments/assets/c1be6330-2792-4a4e-9b02-443ca9ee386c)
+
+### 2. Masuk ke Direktori dan Buat Branch Baru
+> Setelah berhasil di-clone, masuk ke direktori `kontributor`, lalu buat branch baru untuk memisahkan perubahan dari branch utama (`main`).
+```
+  cd kontributor
+```
+![9](https://github.com/user-attachments/assets/f735cd98-fe42-4732-9dd7-265b98b97fe4)
+
+```
+  git checkout -b fitur_login
+```
+![10](https://github.com/user-attachments/assets/2b82caf6-9003-4bb5-990e-d5ce8dec7647)
+
+```
+  git status
+```
+![11](https://github.com/user-attachments/assets/7ffced63-8408-421a-b57f-ca8c9c0a8b2b)
+
+> Branch `fitur_login` ini digunakan khusus untuk mengembangkan fitur tertentu, misalnya halaman login.
+
+## B. Melakukan Perubahan pada File
+### 1. Melihat dan Mengedit File
+> Cek file yang ada di dalam repositori, lalu pilih file yang akan diedit. Misalnya `file1`.
+```
+  ls
+  cat file1
+```
+> Edit file tersebut menggunakan editor teks, seperti `nano`.
+```
+  nano file1
+```
+![12](https://github.com/user-attachments/assets/6757e881-faa9-4a04-a208-6266f8b5f61f)
+> Setelah selesai melakukan perubahan, kamu bisa melihat kembali isinya :
+```
+  cat file1
+```
+![13](https://github.com/user-attachments/assets/fe479d54-a6a5-4a55-b395-4e67fd7aad49)
+> Cek status file yang diubah :
+```
+  git status
+```
+![14](https://github.com/user-attachments/assets/eac3bfab-eb72-4ae5-9d63-0f14bb3547c0)
+
+## C. Menyimpan dan Mengirim Perubahan ke GitHub
+### 1. Commit dan Push Perubahan
+> Setelah melakukan perubahan, file perlu disimpan dalam Git menggunakan perintah `add`, lalu disimpan ke dalam riwayat perubahan menggunakan `commit`, dan dikirim ke GitHub menggunakan `push`.
+```
+  git add .
+  git commit -m "menambahkan text insyaallah berkah"
+```
+![15](https://github.com/user-attachments/assets/43f30fef-0cce-421c-aa55-8b63e3c2814f)
+
+```
+  git push origin fitur_login
+```
+![16](https://github.com/user-attachments/assets/305524bb-97ea-46e5-8c62-45db31222a39)
