@@ -1,4 +1,4 @@
-# 🔐 Membuat Repositori GitHub `dumbways-batch-23` Menjadi Private
+# 🔐 Membuat Repositori GitHub `devops-dumbways-januarramdhani` Menjadi Private
 > Jika kamu memiliki sebuah repositori di GitHub yang sebelumnya bersifat *public* (dapat diakses siapa pun), dan kamu ingin mengubahnya menjadi *private* (hanya bisa diakses oleh pemilik atau kolaborator yang diizinkan), ikuti langkah-langkah berikut :
 
 ## 1. Masuk ke Repositori
