@@ -123,3 +123,44 @@
   git push origin fitur_login
 ```
 ![16](https://github.com/user-attachments/assets/305524bb-97ea-46e5-8c62-45db31222a39)
+
+## D. Membuat dan Menyelesaikan Pull Request
+### 1. Buat Pull Request di GitHub
+> Buka repositori `dumbways-devops-23` di GitHub, dan kamu akan melihat tombol `"Compare & pull request"` di bagian atas. Klik tombol tersebut untuk membuka halaman pembuatan pull request.
+
+![17](https://github.com/user-attachments/assets/c7b46cf9-9347-467f-a6df-f0754573e368)
+
+### 2. Isi Detail Pull Request
+> Isi judul (title) dan deskripsi (description) pull request yang menjelaskan perubahan yang dilakukan. Kemudian klik tombol **"Create pull request"**.
+![18](https://github.com/user-attachments/assets/6dda93fd-33e6-4e9b-bfae-d395998ed308)
+
+### 3. Tinjau Perubahan di Tab Files Changed
+> Pemilik repositori atau reviewer bisa melihat semua perubahan yang diajukan di tab **Files changed** untuk meninjau sebelum melakukan merge.
+![19](https://github.com/user-attachments/assets/f838ce7d-714c-4144-853f-d956fe03659a)
+
+### 4. Merge Pull Request ke Branch Utama
+> Jika tidak ada konflik dan perubahan dianggap valid, klik tombol **"Merge pull request"**.
+![20](https://github.com/user-attachments/assets/130ecb5f-e3b4-4270-bbb5-de4963e74110)
+
+### 5. Konfirmasi Merge
+> Klik **"Confirm merge"** untuk menyelesaikan proses. `Pull request` berhasil digabungkan ke branch utama (`main`) dan statusnya akan berubah menjadi `Merged`.
+![22](https://github.com/user-attachments/assets/3463e457-c090-47d7-a0df-f97b58bc2fa7)
+
+## E. Membersihkan Branch Setelah Merge
+
+### 1. Hapus Branch Lokal di Kontributor
+> Setelah pull request berhasil di-merge, sebaiknya branch `fitur_login` dihapus dari lokal untuk menjaga kebersihan repositori :
+```
+  git checkout main
+  git pull origin main
+  git branch -d fitur_login
+```
+
+### 2. Hapus Branch di Remote oleh Pemilik Repositori
+> Pemilik repositori juga bisa menghapus branch `fitur_login` dari remote GitHub :
+```
+  git push origin --delete fitur_login
+```
+![23](https://github.com/user-attachments/assets/e0f9ce2f-515a-4736-afb6-6ab23f7741fe)
+
+> Setelah ini, branch `fitur_login` akan hilang dari daftar branch di GitHub.
