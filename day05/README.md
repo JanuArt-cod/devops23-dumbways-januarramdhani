@@ -48,7 +48,9 @@
 > Setelah diaktifkan, semua koneksi luar akan diblokir secara default, kecuali port yang secara eksplisit dibuka menggunakan perintah `sudo ufw allow`.
 ![17](https://github.com/user-attachments/assets/bc4a2ba4-60a0-479c-92e0-cda204f6f82c)
 
-## 2. Deploy Aplikasi wayshub-frontend (Node.js di Port 3000)
+---
+
+# ✅ Deploy Aplikasi wayshub-frontend (Node.js di Port 3000)
 > Aplikasi Wayshub Frontend adalah aplikasi berbasis React yang dijalankan menggunakan `Node.js`. Aplikasi ini berfungsi sebagai frontend yang berjalan di `port 3000` secara default. Berikut adalah langkah-langkah untuk mendownload, menginstal, dan menjalankan aplikasi ini di server.
 
 ### A. Tahap Persiapan Server
@@ -90,7 +92,6 @@
 ![5](https://github.com/user-attachments/assets/f6ba61dc-348a-4b12-a417-1434ba670f73)
 ![6](https://github.com/user-attachments/assets/28a1f59a-b064-49fa-b0fe-ccf30baaa1df)
 
----
 
 ### B. Tahap Deploy Aplikasi
 #### 1. **Clone Repository Aplikasi**
@@ -119,3 +120,46 @@
 > Menjalankan aplikasi. Secara default, aplikasi akan berjalan di port 3000.
 
 ![10](https://github.com/user-attachments/assets/cb900db6-ec0b-4d37-a94f-6b1b1015ed75)
+
+---
+
+# 🚀 Deploy Aplikasi Python Flask (Port 5000)
+> Dokumentasi ini menjelaskan cara men-deploy aplikasi Python sederhana yang menampilkan teks “Nama saya Januar” di browser, berjalan di port 5000, dan dapat diakses dari luar server meskipun firewall UFW aktif.
+### A. Persiapan Awal
+```
+    install Python + pip
+```
+> **Penjelasan :**
+> `python3`, `pip3`: Python versi 3 dan package manager-nya.
+![13](https://github.com/user-attachments/assets/70f8da36-ff34-416b-8bba-80165a07a6ab)
+
+### B. Install Flask
+> Kita akan menggunakan Flask, framework Python ringan untuk web.
+```
+    pip3 install flask
+```
+> Jika kamu ingin isolasi proyek agar lebih rapi, gunakan `python3 -m venv venv` dan `source venv/bin/activate`.
+![14](https://github.com/user-attachments/assets/f73977cd-4b22-4e8b-81a8-e452960316f9)
+
+### C. Membuat Aplikasi Python
+> Buat file baru bernama `app.py`
+```
+    nano app.py
+```
+![11](https://github.com/user-attachments/assets/6e8e9215-26af-4648-9cd6-8fb8a05f55f2)
+
+Masukkan kode berikut :
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Nama saya Januar"  # Ganti dengan nama kamu
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+```
+
+![12](https://github.com/user-attachments/assets/c76a2947-3593-4a81-87d6-a02bab3688e5)
