@@ -135,4 +135,10 @@ https://github.com/user-attachments/assets/57c2c2f5-4442-4baf-a7c3-651b0e9a9b8c
 
 
 ---
+## Membuat Server Golang yang Bisa Diakses via Browser
+### Menjalankan File Binary (Executable)
+```
+  pm2 start ./golang-app --name "golang-app"
+```
 
+**🔍 Penjelasan Detail:**
