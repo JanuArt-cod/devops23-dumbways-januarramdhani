@@ -70,6 +70,13 @@ Dengan panduan ini, dapat mengelola ketiga server secara bersamaan tanpa menggan
 
 ![15](https://github.com/user-attachments/assets/6d9917b3-8e4a-4e4a-a00f-8ec3c0364ce3)
 
+**Berikut ini adalah video hasil dari pm2**
+
+
+
+https://github.com/user-attachments/assets/1d50a800-3a60-4742-a8f6-94bc680d2e08
+
+
 ---
 ## Menjalankan Server Python Flask di Background
 ## Jalankan dengan PM2
@@ -85,4 +92,8 @@ Dengan panduan ini, dapat mengelola ketiga server secara bersamaan tanpa menggan
 
 ![16](https://github.com/user-attachments/assets/f49c005b-63d6-4ddc-a5d8-ce5da8c22fb4)
 
+**Berikut ini adalah video hasil dari pm2**
+
+
+https://github.com/user-attachments/assets/57c2c2f5-4442-4baf-a7c3-651b0e9a9b8c
 
