@@ -135,10 +135,31 @@ https://github.com/user-attachments/assets/57c2c2f5-4442-4baf-a7c3-651b0e9a9b8c
 
 
 ---
-## Membuat Server Golang yang Bisa Diakses via Browser
 ### Menjalankan File Binary (Executable)
 ```
   pm2 start ./golang-app --name "golang-app"
 ```
 
 **🔍 Penjelasan Detail:**
+> 1. `./namafile-binary`
+> - File binary hasil build Golang
+> - Pastikan sudah di-build dengan `go build`
+> - Cek dengan `ls` untuk memastikan file ada
+> 2. `--name`
+> - Nama unik untuk proses di PM2 (bisa berbeda dengan nama file)
+
+*Dikarenakan file yang ada sudah saya build dengan perintah `go build`, maka saya akan langsung perlihat kan gambar yang sudah di jadi :*
+
+![18](https://github.com/user-attachments/assets/ef14251e-0313-4cfe-a917-239d48a4b8ca)
+
+
+
+https://github.com/user-attachments/assets/62f720fb-71ac-4d86-9c7e-7ffb28de3f62
+
+
+---
+## 🎯 Kesimpulan
+> Dengan panduan ini, sekarang bisa:
+> - ✅ Menjalankan Node.js & Python di background (tanpa memblokir terminal).
+> - ✅ Membuat server Golang yang bisa diakses via browser.
+> - ✅ Mengelola semua proses dengan PM2 (monitoring, restart otomatis, dll).
