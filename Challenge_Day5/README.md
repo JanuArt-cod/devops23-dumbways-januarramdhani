@@ -57,7 +57,7 @@ Dengan panduan ini, dapat mengelola ketiga server secara bersamaan tanpa menggan
 ```
 ---
 ## Menjalankan Server Node.js di Background
-## Jalankan dengan PM2
+### Jalankan dengan PM2
 ```
   pm2 serve build 3000 --name "wayshub-frontend" --spa
 ```
@@ -79,7 +79,7 @@ https://github.com/user-attachments/assets/1d50a800-3a60-4742-a8f6-94bc680d2e08
 
 ---
 ## Menjalankan Server Python Flask di Background
-## Jalankan dengan PM2
+### Jalankan dengan PM2
 ```
   pm2 start app.py --name "python-app" --interpreter python3
 ```
@@ -96,4 +96,43 @@ https://github.com/user-attachments/assets/1d50a800-3a60-4742-a8f6-94bc680d2e08
 
 
 https://github.com/user-attachments/assets/57c2c2f5-4442-4baf-a7c3-651b0e9a9b8c
+
+## Membuat Server Golang yang Bisa Diakses via Browser
+### Masuk ke Direktori Golang
+```
+  sudo nano app.go
+```
+> Perintah ini terdiri dari 3 bagian utama :
+> 1. `sudo`
+> - Singkatan dari "Super User DO"
+> - Menjalankan perintah dengan hak akses administrator (root)
+> - Diperlukan ketika : ( Membuat/mengedit file di folder sistem, Mengubah file yang dimiliki oleh user lain, Operasi yang membutuhkan privilege tinggi )
+> 2. `nano`
+> - Text editor berbasis terminal yang sederhana
+> - Mudah digunakan (beginner-friendly)
+> 3. `app.go`
+> - Nama file yang akan dibuka/dibuat
+> - Ekstensi `.go` menandakan file kode Golang
+---
+**Nano Editor Shortcuts**
+
+| Shortcut    | Fungsi                  |
+|-------------|-------------------------|
+| `Ctrl + O`  | Save (Write Out)        |
+| `Ctrl + X`  | Keluar                  |
+| `Ctrl + K`  | Cut line                |
+| `Ctrl + U`  | Paste                   |
+| `Ctrl + W`  | Cari teks               |
+| `Ctrl + \`  | Replace teks            |
+| `Ctrl + G`  | Bantuan (help)          |
+| `Ctrl + _`  | Go to line              |
+| `Alt + U`   | Undo                    |
+| `Alt + E`   | Redo                    |
+| `Ctrl + C`  | Show cursor position    | 
+
+
+![17](https://github.com/user-attachments/assets/a5e7ac35-ce0c-4240-885b-58df078a7b5c)
+
+
+---
 
