@@ -64,7 +64,8 @@ server {
 ![4-lb](https://github.com/user-attachments/assets/528628e3-7703-412f-85c3-88db086274db)
 
 ---
-# Penambahan Identifier pada Project
+# server2 januar@januar(192.168.1.28)
+### Penambahan Identifier pada Project
 ### Tujuan:
 *"Untuk mengetahui dari server mana response web berasal."*
 
