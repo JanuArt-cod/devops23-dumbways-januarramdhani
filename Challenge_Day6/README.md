@@ -5,118 +5,101 @@
 
 | Nama Server     | Hostname         | Alamat IP         |
 |------------------|-------------------|--------------------|
-| Server1         | januar-januar   | 192.168.1.28      |
-| Server_1(anggap saja server2)         | server1-server1   | 192.168.1.10      |
-| load balancing    | lb-lb        | 192.168.1.11      |
+| server1    | lb@lb        | 192.168.1.11      |
+| Server2         | januar@januar   | 192.168.1.28      |
 
-## 1. Load Balancer (Nginx) - lb-lb (192.168.1.11)
+# server1 lb@lb(192.168.1.11)
 > **Fungsi:** Seperti "polisi lalu lintas" yang mengarahkan request ke 2 server Wayshub.
+### Install Nginx
 ```
-  # Install Nginx
   sudo apt update && sudo apt install nginx -y
 ```
-
-![1-lb](https://github.com/user-attachments/assets/8820d009-59b1-42d0-85f6-6b6d47970846)
-
-![2](https://github.com/user-attachments/assets/25b24f66-6190-413d-8325-bf38bf186cab)
+![1-lb](https://github.com/user-attachments/assets/a962bc54-b44d-4b99-ad70-01e0fae2debb)
 
 ```
-  # Edit config
-  sudo nano /etc/nginx/sites-available/wayshub
+  cd /etc/nginx/sites-enabled
 ```
-
-![3](https://github.com/user-attachments/assets/b40e25b2-5579-4b77-a7fe-34f1dd326f25)
-
-### Simpan & Restart:
 ```
-  sudo ln -s /etc/nginx/sites-available/wayshub /etc/nginx/sites-enabled/
+  sudo nano loadbalancer.conf
+```
+![6-ls](https://github.com/user-attachments/assets/69869d90-a9b6-42cd-ae21-6ef04458cc72)
+
+### Tambahkan konfigurasi berikut:
+```
+  upstream frontend_cluster {
+    server 192.168.1.11:3000; # Server 1
+    server 192.168.1.28:3000; # Server 2
+}
+
+server {
+    listen 80;
+    server_name myapp.test;
+
+    location / {
+        proxy_pass http://frontend_cluster;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+```
+![5-lb](https://github.com/user-attachments/assets/a2961450-9cc1-4ce1-ad0b-b19809261f9b)
+
+> **Penjelasan:**
+> - `upstream frontend_cluster` mendefinisikan dua backend server untuk menerima trafik secara bergantian.
+> - `proxy_pass` meneruskan permintaan pengguna ke salah satu server yang tersedia.
+> - `proxy_set_header` menyisipkan header tambahan agar informasi pengguna tetap diteruskan ke backend server.
+
+### Uji konfigurasi nginx
+```
+  sudo nginx -t
+```
+![3-lb](https://github.com/user-attachments/assets/b8dcd630-29e2-4466-9ca9-2d493b25e9cd)
+
+```
   sudo systemctl restart nginx
 ```
-![4](https://github.com/user-attachments/assets/e14d6768-9858-4cd1-8664-750f5f8939aa)
-
-![5](https://github.com/user-attachments/assets/00ce8071-6dcb-420b-bfe8-3b427e5a643f)
+![4-lb](https://github.com/user-attachments/assets/528628e3-7703-412f-85c3-88db086274db)
 
 ---
-## 2. App Server 1 - januar-januar (192.168.1.28)
-> Fungsi: Menjalankan aplikasi Wayshub di port 3000.
+# Penambahan Identifier pada Project
+### Tujuan:
+*"Untuk mengetahui dari server mana response web berasal."*
 
-**Install Node.js**
-```
-  sudo apt install nodejs npm -y
-```
-> Menginstal nodejs dan npm jika belum terinstall
+### Langkah :
+> Edit file public/index.html pada masing-masing server.
+> Tambahkan teks yang membedakan:
+> - Misalnya:
+> - Di Server 1: Server dari: webbalancer1
+> - Di Server 2: Server dari: webserver2
 
-**Clone repo Wayshub**
-```
-  https://github.com/dumbwaysdev/wayshub-frontend.git
-```
-> bagi yang belum clone repo
+# Menjalankan Project dengan PM2
+### Tujuan:
+*"Agar aplikasi tetap berjalan walaupun terminal ditutup."*
+### Langkah:
+Jalankan aplikasi dengan pm2
 
-**Masuk ke direktori & npm install**
 ```
-  cd wayshub
-  npm install
+  pm2 start npm --name "server1" -- start
+  pm2 start npm --name "server2" -- start
 ```
-**Jalankan**
-```
-  npm start  
-```
-> Pastikan jalan di port 3000
 
-![6](https://github.com/user-attachments/assets/1aef69d2-f1ff-4a34-b72f-c5a55d9105a0)
-![7](https://github.com/user-attachments/assets/f4b592b3-0cee-4d3d-a029-db8885085760)
+![7-lb](https://github.com/user-attachments/assets/8eb44e95-9461-4ae7-acfd-f2dc79d0caa9)
 
----
-## 2. App Server 2 - server1-server1 (192.168.1.10)
-> Fungsi: Sama seperti Server 1 (clone aplikasi Wayshub).
-> Langkah:
-> - Lakukan persis seperti Server 1 (install Node.js, clone repo, dll).
-> - Pastikan aplikasi jalan di port 3000.
+![8-lb](https://github.com/user-attachments/assets/751e4559-0c0a-4864-b72d-e046470fffa4)
 
-**Install Node.js**
-```
-  sudo apt install nodejs npm -y
-```
-> Menginstal nodejs dan npm jika belum terinstall
 
-**Clone repo Wayshub**
-```
-  https://github.com/dumbwaysdev/wayshub-frontend.git
-```
-> bagi yang belum clone repo
-
-**Masuk ke direktori & npm install**
-```
-  cd wayshub
-  npm install
-```
-**Jalankan**
-```
-  npm start  
-```
-> Pastikan jalan di port 3000
-
-![8](https://github.com/user-attachments/assets/b1185075-4f7f-4aa0-b8bb-fa98adc02e0f)
-
-## Cara Testing
+# Pengujian Load Balancer
 ### Akses Load Balancer
 > Buka browser atau curl :
-```
-  curl http://192.168.1.28 -> akses server 1 
-```
 
-![10](https://github.com/user-attachments/assets/2657d666-a4cf-462b-9ca8-2a96a350d8b3)
+### Langkah:
+> - Akses http://januar.xyz berkali-kali dari browser.
+> - Lihat teks dari masing-masing server (yang sudah ditandai).
 
-```
-  curl http://192.168.1.10  -> akses server 2
-```
+![Screenshot 2025-05-06 012636](https://github.com/user-attachments/assets/cf4ca78c-c696-423b-95ba-e01012ed02c6)
 
-![9](https://github.com/user-attachments/assets/b67b323e-eeb1-4b86-8d4e-989b97ee2469)
-
-```
-  curl -I http://192.168.1.28 -> akses server 1
-  curl -I http://192.168.1.10  -> akses server 2
-```
-![11](https://github.com/user-attachments/assets/665b1832-131b-424b-8535-b2cbaa0a2cdf)
-
+![Screenshot 2025-05-06 012715](https://github.com/user-attachments/assets/8fb8f469-5c0e-48f3-8e52-73aca4bb3e52)
 
