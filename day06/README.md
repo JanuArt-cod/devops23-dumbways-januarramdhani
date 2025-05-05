@@ -18,3 +18,7 @@
 
 # Implementasi Reverse Proxy untuk wayshub (januar.xyz)
 > Langkah-langkah (menggunakan NGINX) :
+### Install NGINX
+```
+  sudo apt update
+```
