@@ -2,6 +2,9 @@
 
 ![Screenshot 2025-05-05 123423](https://github.com/user-attachments/assets/534f0acc-4a45-4046-b84e-75e5ae0df496)
 
+# 🔁 Apa Itu Reverse Proxy?
+> Reverse Proxy adalah sebuah server yang berdiri di antara klien (browser) dan server utama (aplikasi). Ia menerima permintaan dari klien, lalu meneruskannya ke server belakang (backend) dan mengembalikan hasilnya ke klien.
+
 # Cara Kerja Reverse Proxy
 > - User mengakses domain seperti alvin.xyz dari browser.
 > - Permintaan masuk ke reverse proxy (misal: NGINX) terlebih dahulu.
@@ -22,3 +25,4 @@
 ```
   sudo apt update
 ```
+![3](https://github.com/user-attachments/assets/2da9e4d3-0775-4ef3-a0c8-fc49b7952d02)
